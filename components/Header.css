@@ -1,0 +1,139 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.logo-animation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-icon {
+  color: var(--gold);
+  stroke-width: 1.5;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links ul li {
+  margin-left: 2rem;
+}
+
+.nav-links ul li a {
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-links ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: var(--gold);
+}
+
+.nav-links ul li a:hover::after {
+  width: 100%;
+}
+
+.scrolled {
+  background-color: rgba(26, 26, 26, 0.95);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(26, 26, 26, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links ul li {
+    margin: 1.5rem 0;
+  }
+}

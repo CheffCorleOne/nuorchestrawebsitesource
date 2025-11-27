@@ -1,0 +1,236 @@
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  padding: 4rem 0 2rem;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(26, 26, 26, 0.98), rgba(26, 26, 26, 0.98)), 
+              url('https://images.pexels.com/photos/164821/pexels-photo-164821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+  z-index: 0;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-icon {
+  color: var(--gold);
+}
+
+.footer-logo-text {
+   font-family: 'Raleway', sans-serif;
+  font-size: 1.8rem;
+  margin-left: 0.5rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--gold);
+  color: var(--dark);
+  transform: translateY(-3px);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-column h4 {
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-column h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--gold);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column ul li a {
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 15px;
+}
+
+.footer-column ul li a::before {
+  content: '►';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--gold);
+}
+
+.footer-column ul li a:hover::before {
+  transform: translateX(3px);
+}
+
+.footer-newsletter {
+  grid-column: span 1;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background-color: rgba(26, 26, 26, 0.5);
+  color: var(--light);
+  outline: none;
+}
+
+.newsletter-form input:focus {
+  border-color: var(--gold);
+}
+
+.newsletter-btn {
+  background-color: var(--gold);
+  color: var(--dark);
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: var(--gold-light);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column ul li a {
+    padding-left: 0;
+  }
+  
+  .footer-column ul li a::before {
+    display: none;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .newsletter-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
