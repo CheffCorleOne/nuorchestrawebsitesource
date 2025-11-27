@@ -1,0 +1,41 @@
+/* Main App Styles */
+.app {
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* Стили для кнопки пианино */
+.piano-launcher {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.piano-button {
+  padding: 12px 24px;
+  background: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3);
+}
+
+.piano-button:hover {
+  background: #5a0c9d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(106, 13, 173, 0.4);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .piano-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
